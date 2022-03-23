@@ -4,12 +4,12 @@ using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class RoomCreate : MonoBehaviourPunCallbacks
 {
-
-    public InputField createdRoomName;
-    public InputField enteredRoomName;
+    public TMP_InputField createdRoomName;
+    public TMP_InputField enteredRoomName;
     // Start is called before the first frame update
     void Start()
     {
