@@ -34,6 +34,7 @@ public class RoomCreate : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        Debug.Log("Calale");
         PhotonNetwork.LoadLevel(2);
     }
 }
