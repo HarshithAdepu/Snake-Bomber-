@@ -241,6 +241,7 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -350, y: 50}
   m_SizeDelta: {x: 300, y: 75}
 =======
@@ -255,6 +256,10 @@ RectTransform:
   m_AnchoredPosition: {x: -350, y: -50}
   m_SizeDelta: {x: 160, y: 30}
 >>>>>>> parent of 00eefde (Buttons and Input Field Added)
+=======
+  m_AnchoredPosition: {x: -350, y: -50}
+  m_SizeDelta: {x: 160, y: 30}
+>>>>>>> parent of 6594afa (TMP)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255929547
 MonoBehaviour:
@@ -576,6 +581,7 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 350, y: -150}
   m_SizeDelta: {x: 300, y: 75}
 =======
@@ -590,6 +596,10 @@ RectTransform:
   m_AnchoredPosition: {x: -350, y: 0}
   m_SizeDelta: {x: 160, y: 30}
 >>>>>>> parent of 00eefde (Buttons and Input Field Added)
+=======
+  m_AnchoredPosition: {x: -350, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+>>>>>>> parent of 6594afa (TMP)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486701953
 MonoBehaviour:
@@ -814,6 +824,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_ConstrainProportionsScale: 0
 <<<<<<< HEAD
   m_Children:
@@ -828,6 +839,8 @@ RectTransform:
   m_RootOrder: 0
 >>>>>>> 6594afa51724e5a53d945ce5e3d1fe91a9df8cfd
 =======
+=======
+>>>>>>> parent of 6594afa (TMP)
   m_Children: []
   m_Father: {fileID: 2062790765}
   m_RootOrder: 0
@@ -1154,6 +1167,7 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -350, y: -150}
   m_SizeDelta: {x: 300, y: 75}
 =======
@@ -1168,6 +1182,10 @@ RectTransform:
   m_AnchoredPosition: {x: 350, y: -50}
   m_SizeDelta: {x: 160, y: 30}
 >>>>>>> parent of 00eefde (Buttons and Input Field Added)
+=======
+  m_AnchoredPosition: {x: 350, y: -50}
+  m_SizeDelta: {x: 160, y: 30}
+>>>>>>> parent of 6594afa (TMP)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014271524
 MonoBehaviour:
@@ -1282,6 +1300,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_ConstrainProportionsScale: 0
 <<<<<<< HEAD
 =======
@@ -1289,6 +1308,8 @@ RectTransform:
 >>>>>>> parent of 6594afa (TMP)
 =======
 >>>>>>> parent of 00eefde (Buttons and Input Field Added)
+=======
+>>>>>>> parent of 6594afa (TMP)
   m_Children:
   - {fileID: 1233158941}
   - {fileID: 110300526}
@@ -1353,6 +1374,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_CharacterLimit: 0
   m_OnEndEdit:
+<<<<<<< HEAD
     m_PersistentCalls:
       m_Calls: []
   m_OnValueChanged:
@@ -1500,6 +1522,8 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_CharacterLimit: 0
   m_OnEndEdit:
+=======
+>>>>>>> parent of 6594afa (TMP)
     m_PersistentCalls:
       m_Calls: []
   m_OnValueChanged:
