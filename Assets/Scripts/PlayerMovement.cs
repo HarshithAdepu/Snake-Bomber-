@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float speed = 5;
     private Vector3 direction;
-    private Vector3 position;
     PlayerState playerstate;
-
-    private Animator animator;
+    PhotonView pView;
     enum PlayerState
     {
         ready,
@@ -19,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction = Vector3.zero;
         playerstate = PlayerState.ready;
-        animator = GetComponent<Animator>();
+        pView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -43,29 +42,29 @@ public class PlayerMovement : MonoBehaviour
     
     private void PlayerInput()
     {
-        if (Input.GetKey(KeyCode.A))
+        if(pView.IsMine)
         {
-            direction = Vector3.left;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            direction = Vector3.right;
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            animator.SetTrigger("RunUp");
-            direction = Vector3.up;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            animator.SetTrigger("RunDown");
-            direction = Vector3.down;
+            if (Input.GetKey(KeyCode.A))
+            {
+                direction = Vector3.left;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                direction = Vector3.right;
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                direction = Vector3.up;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                direction = Vector3.down;
+            }
         }
     }
     
     private void FixedUpdate()
     {
-       position += direction * speed * Time.fixedDeltaTime;
-       transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
+        transform.position += direction * speed * Time.fixedDeltaTime;
     }
 }
