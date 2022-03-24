@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         switch(playerstate)
         {
             case PlayerState.ready:
-                 if(Input.anyKeyDown)
+                 if(Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.S))
                 {
                     playerstate = PlayerState.playing;
                 }
