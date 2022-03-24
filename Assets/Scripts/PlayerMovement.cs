@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        direction = Vector3.zero;
+       // direction = Vector3.zero;
         playerstate = PlayerState.ready;
         pView = GetComponent<PhotonView>();
     }
@@ -66,7 +66,9 @@ public class PlayerMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        position += direction * speed * Time.fixedDeltaTime;
-        transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
+         transform.position += direction * speed * Time.fixedDeltaTime;
+
+         //transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
+        
     }
 }
