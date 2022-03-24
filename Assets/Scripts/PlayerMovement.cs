@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float speed = 5;
     private Vector3 direction;
+    private Vector3 position;
     PlayerState playerstate;
     PhotonView pView;
     enum PlayerState
@@ -65,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        transform.position += direction * speed * Time.fixedDeltaTime;
+        position += direction * speed * Time.fixedDeltaTime;
+        transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
     }
 }
