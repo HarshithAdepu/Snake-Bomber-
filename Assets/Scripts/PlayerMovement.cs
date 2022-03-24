@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     private float speed = 5;
     private Vector3 direction;
+    private Vector3 position;
     PlayerState playerstate;
 
+    private Animator animator;
     enum PlayerState
     {
         ready,
@@ -17,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction = Vector3.zero;
         playerstate = PlayerState.ready;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,16 +53,19 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.W))
         {
+            animator.SetTrigger("RunUp");
             direction = Vector3.up;
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            animator.SetTrigger("RunDown");
             direction = Vector3.down;
         }
     }
     
     private void FixedUpdate()
     {
-        transform.position += direction * speed * Time.fixedDeltaTime;
+       position += direction * speed * Time.fixedDeltaTime;
+       transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
     }
 }
