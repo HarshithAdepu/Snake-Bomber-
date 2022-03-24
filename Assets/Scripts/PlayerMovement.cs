@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-       // direction = Vector3.zero;
+        // direction = Vector3.zero;
         playerstate = PlayerState.ready;
         pView = GetComponent<PhotonView>();
     }
@@ -26,10 +24,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        switch(playerstate)
+        switch (playerstate)
         {
             case PlayerState.ready:
-                 if(Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.S))
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
                 {
                     playerstate = PlayerState.playing;
                 }
@@ -40,10 +38,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    
+
     private void PlayerInput()
     {
-        if(pView.IsMine)
+        if (pView.IsMine)
         {
             if (Input.GetKey(KeyCode.A))
             {
@@ -63,12 +61,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    
+
     private void FixedUpdate()
     {
-         transform.position += direction * speed * Time.fixedDeltaTime;
+        transform.position += direction * speed * Time.fixedDeltaTime;
 
-         //transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
-        
+        //transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
+
     }
 }

@@ -1,5 +1,5 @@
-using UnityEngine;
 using Photon.Pun;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
@@ -13,7 +13,6 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
         Debug.Log("Connected To Master");
         PhotonNetwork.JoinLobby();
     }
-
     public override void OnJoinedLobby()
     {
         Debug.Log("Lobby Joined");
