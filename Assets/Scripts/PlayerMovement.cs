@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float speed = 5;
     private Vector3 direction;
     PlayerState playerstate;
-
+    PhotonView pView;
     enum PlayerState
     {
         ready,
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction = Vector3.zero;
         playerstate = PlayerState.ready;
+        pView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
@@ -40,21 +42,24 @@ public class PlayerMovement : MonoBehaviour
     
     private void PlayerInput()
     {
-        if (Input.GetKey(KeyCode.A))
+        if(pView.IsMine)
         {
-            direction = Vector3.left;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            direction = Vector3.right;
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            direction = Vector3.up;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            direction = Vector3.down;
+            if (Input.GetKey(KeyCode.A))
+            {
+                direction = Vector3.left;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                direction = Vector3.right;
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                direction = Vector3.up;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                direction = Vector3.down;
+            }
         }
     }
     
