@@ -6,8 +6,8 @@ public class ScoreUpdater : MonoBehaviour
 {
     PhotonView pView;
     public static ScoreUpdater _Instance;
-    public static int playerScore_1;
-    public static int playerScore_2;
+    public  int playerScore_1;
+    public  int playerScore_2;
     public TextMeshProUGUI player1ScoreText;
     public TextMeshProUGUI player2ScoreText;
     // Start is called before the first frame update

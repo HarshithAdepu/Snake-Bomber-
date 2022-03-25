@@ -6,14 +6,14 @@ using System;
 
 public class Damage : MonoBehaviour
 {
-    bool die;
+    public bool die;
     PhotonView view;
 
     int team = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        view = GetComponent<PhotonView>();  
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Damage : MonoBehaviour
         {
             if(view.IsMine)
             {
-                view.RPC("PlayerKilled", RpcTarget.All, team);
+                view.RPC("PlayerKilled", RpcTarget.AllBuffered, team);
                 //StartCoroutine(Respawn());
             }
         }
@@ -38,11 +38,16 @@ public class Damage : MonoBehaviour
 
     void PlayerKilled(int team)
     {
-        if(team==0)
+        if (team == 0)
         {
-            ScoreUpdater.playerScore_1++;
+            ScoreUpdater._Instance.playerScore_1++;
+            die = false;
         }
         else
-            ScoreUpdater.playerScore_2++;
+        {
+            ScoreUpdater._Instance.playerScore_2++;
+            die = false;
+
+        }
     }
 }
