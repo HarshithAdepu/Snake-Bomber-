@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5;
     private Vector3 direction;
     private Vector3 position;
+    
     PlayerState playerstate;
     PhotonView pView;
     enum PlayerState
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (pView.IsMine)
+        if (pView!=null && pView.IsMine)
         {
             if (Input.GetKey(KeyCode.A))
             {
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
                 direction = Vector3.down;
             }
         }
+       
     }
 
     private void FixedUpdate()
