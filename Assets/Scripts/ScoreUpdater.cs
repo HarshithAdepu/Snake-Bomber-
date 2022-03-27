@@ -14,9 +14,14 @@ public class ScoreUpdater : MonoBehaviour
     void Start()
     {
         _Instance = this;
+        
         SetScore();
     }
 
+    void Awake()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
