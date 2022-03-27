@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 1b81e7c6c4487574aa53694fd02b52fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: d727355ef4fd1d149b3f2d5e4cf3c3bd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GameAman.unity
     guid: ec3bd0cadf08d7b49819c190c3627f2d
   m_configObjects: {}
