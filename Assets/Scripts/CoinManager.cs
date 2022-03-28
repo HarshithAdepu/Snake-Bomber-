@@ -11,7 +11,7 @@ public class CoinManager : MonoBehaviour
     int coinCount = 0;
     public int maxCoinCount = 3;
     public HorizontalLayoutGroup coinUIContainer;
-    //public HorizontalLayoutGroup bombUIContainer;
+    public HorizontalLayoutGroup bombUIContainer;
     public GameObject coinUIPrefab;
     public GameObject bombUIPrefab;
     public GameObject bombPrefab;
@@ -48,7 +48,7 @@ public class CoinManager : MonoBehaviour
             if (coinCount == maxCoinCount)
             {
                 bomb = GameObject.Instantiate(bombUIPrefab);
-                bomb.transform.SetParent(coinUIContainer.transform);
+                bomb.transform.SetParent(bombUIContainer.transform);
             }
         }
        

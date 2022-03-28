@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4a60fc43509eb40bba977c07443639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim_Astro_Boi: {fileID: 0}
 --- !u!95 &9007112437939976025
 Animator:
   serializedVersion: 4
