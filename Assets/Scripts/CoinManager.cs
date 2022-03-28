@@ -11,11 +11,13 @@ public class CoinManager : MonoBehaviour
     int coinCount = 0;
     public int maxCoinCount = 3;
     public HorizontalLayoutGroup coinUIContainer;
-    public HorizontalLayoutGroup bombUIContainer;
+    //public HorizontalLayoutGroup bombUIContainer;
     public GameObject coinUIPrefab;
     public GameObject bombUIPrefab;
     public GameObject bombPrefab;
     private GameObject player;
+
+    private GameObject bomb;
 
     void Start()
     {
@@ -31,6 +33,7 @@ public class CoinManager : MonoBehaviour
         if(coinCount == maxCoinCount  && Input.GetKeyDown(KeyCode.Space))
         {
             SpawnBomb();
+            Destroy(bomb);
         }
     }
     public void UpdateCoinCount(GameObject coin)
@@ -44,8 +47,8 @@ public class CoinManager : MonoBehaviour
             Destroy(coin.gameObject);
             if (coinCount == maxCoinCount)
             {
-                GameObject bomb = GameObject.Instantiate(bombUIPrefab);
-                bomb.transform.SetParent(bombUIContainer.transform);
+                bomb = GameObject.Instantiate(bombUIPrefab);
+                bomb.transform.SetParent(coinUIContainer.transform);
             }
         }
        

@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5;
     private Vector3 direction;
     private Vector3 position;
+    public Animator anim_Astro_Boi;
     
     PlayerState playerstate;
     PhotonView pView;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         // direction = Vector3.zero;
         playerstate = PlayerState.ready;
         pView = GetComponent<PhotonView>();
+        anim_Astro_Boi = GetComponent<Animator>();  
     }
 
     // Update is called once per frame
@@ -47,10 +49,14 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 direction = Vector3.left;
+                //anim_Astro_Boi.SetBool("RunLeft", true);
+
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 direction = Vector3.right;
+               
+                
             }
             else if (Input.GetKey(KeyCode.W))
             {
@@ -59,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
             else if (Input.GetKey(KeyCode.S))
             {
                 direction = Vector3.down;
+                anim_Astro_Boi.Play("Down");
             }
         }
        
