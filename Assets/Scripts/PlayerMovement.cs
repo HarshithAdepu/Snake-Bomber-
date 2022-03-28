@@ -49,18 +49,20 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 direction = Vector3.left;
-                //anim_Astro_Boi.SetBool("RunLeft", true);
+                anim_Astro_Boi.Play("Left");
+                this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 direction = Vector3.right;
-               
-                
+                anim_Astro_Boi.Play("Right");
+                this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
             else if (Input.GetKey(KeyCode.W))
             {
                 direction = Vector3.up;
+                anim_Astro_Boi.Play("Up");
             }
             else if (Input.GetKey(KeyCode.S))
             {
