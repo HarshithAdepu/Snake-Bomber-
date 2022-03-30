@@ -16,11 +16,12 @@ public class CoinManager : MonoBehaviour
     public GameObject bombUIPrefab;
     public GameObject bombPrefab;
     private GameObject player;
-
     private GameObject bomb;
+    public bool bombCarrier;
 
     void Start()
     {
+        bombCarrier = false;    
         if(instance == null)
         {
             instance = this;
@@ -34,6 +35,8 @@ public class CoinManager : MonoBehaviour
         {
             SpawnBomb();
             Destroy(bomb);
+            bombCarrier = false;
+            
         }
     }
     public void UpdateCoinCount(GameObject coin)

@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     
     PlayerState playerstate;
     PhotonView pView;
+
+    public static PlayerMovement _Instance;
     enum PlayerState
     {
         ready,
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         playerstate = PlayerState.ready;
         pView = GetComponent<PhotonView>();
         anim_Astro_Boi = GetComponent<Animator>();  
+        _Instance = this;   
     }
 
     // Update is called once per frame
@@ -49,25 +52,40 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 direction = Vector3.left;
-                anim_Astro_Boi.Play("Left");
                 this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                if (CoinManager.instance.bombCarrier == true)
+                    anim_Astro_Boi.Play("Bomb Left");
+                else 
+                    anim_Astro_Boi.Play("Left");
 
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 direction = Vector3.right;
-                anim_Astro_Boi.Play("Right");
+               
                 this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                if (CoinManager.instance.bombCarrier == true)
+                    anim_Astro_Boi.Play("Bomb Right");
+                else
+                    anim_Astro_Boi.Play("Right");
             }
             else if (Input.GetKey(KeyCode.W))
             {
                 direction = Vector3.up;
-                anim_Astro_Boi.Play("Up");
+               
+                if (CoinManager.instance.bombCarrier == true)
+                    anim_Astro_Boi.Play("Bomb Up");
+                else
+                    anim_Astro_Boi.Play("Up");
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 direction = Vector3.down;
-                anim_Astro_Boi.Play("Down");
+               
+                if (CoinManager.instance.bombCarrier == true)
+                    anim_Astro_Boi.Play("Bomb Down");
+                else
+                    anim_Astro_Boi.Play("Down");
             }
         }
        
