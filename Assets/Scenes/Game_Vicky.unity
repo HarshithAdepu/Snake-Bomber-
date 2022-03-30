@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504176695499f4a428f55c2984dc8fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCoinCount: 3
+  maxCoinBagCount: 3
   coinUIContainer: {fileID: 1413346344}
   bombUIContainer: {fileID: 1341106614}
   coinUIPrefab: {fileID: 617649298570401874, guid: 5d047de7bbf5d294a85084facbb51afa, type: 3}
@@ -2856,7 +2856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007112437939976005, guid: 6d75fed535e02d6498af1e7585b22e62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9007112437939976005, guid: 6d75fed535e02d6498af1e7585b22e62, type: 3}
       propertyPath: m_TagString
@@ -4523,7 +4523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9007112437939976005, guid: 6d75fed535e02d6498af1e7585b22e62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9007112437939976005, guid: 6d75fed535e02d6498af1e7585b22e62, type: 3}
       propertyPath: m_TagString

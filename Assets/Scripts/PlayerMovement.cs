@@ -42,9 +42,29 @@ public class PlayerMovement : MonoBehaviour
                 PlayerInput();
                 break;
         }
+        PlayerGoesOutOfBounds();
 
     }
+    public void PlayerGoesOutOfBounds()
+    {
+        if(transform.position.x < -10.0f)
+        {
+            transform.position = new Vector3(9.5f,transform.position.y,transform.position.z);
 
+        }else if (transform.position.x > 10.0f)
+        {
+            transform.position = new Vector3(-9.5f, transform.position.y, transform.position.z);
+
+        }
+
+        if (transform.position.y <= -6.5f )
+        {
+            transform.position = new Vector3(transform.position.x, 4.0f, transform.position.z);
+        }else if(transform.position.y >= 4.5f)
+        {
+            transform.position = new Vector3(transform.position.x, -6.0f, transform.position.z);
+        }
+    }
     private void PlayerInput()
     {
         if (pView!=null && pView.IsMine)
@@ -53,9 +73,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 direction = Vector3.left;
                 this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
-                if (CoinManager.instance.bombCarrier == true)
-                    anim_Astro_Boi.Play("Bomb Left");
-                else 
+               
                     anim_Astro_Boi.Play("Left");
 
             }
@@ -64,27 +82,20 @@ public class PlayerMovement : MonoBehaviour
                 direction = Vector3.right;
                
                 this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
-                if (CoinManager.instance.bombCarrier == true)
-                    anim_Astro_Boi.Play("Bomb Right");
-                else
+             
                     anim_Astro_Boi.Play("Right");
             }
             else if (Input.GetKey(KeyCode.W))
             {
                 direction = Vector3.up;
                
-                if (CoinManager.instance.bombCarrier == true)
-                    anim_Astro_Boi.Play("Bomb Up");
-                else
+              
                     anim_Astro_Boi.Play("Up");
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 direction = Vector3.down;
                
-                if (CoinManager.instance.bombCarrier == true)
-                    anim_Astro_Boi.Play("Bomb Down");
-                else
                     anim_Astro_Boi.Play("Down");
             }
         }

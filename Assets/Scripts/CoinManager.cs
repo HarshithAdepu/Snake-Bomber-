@@ -8,8 +8,8 @@ public class CoinManager : MonoBehaviour
 
 
     public static CoinManager instance;
-    int coinCount = 0;
-    public int maxCoinCount = 3;
+    int coinBagCount = 0;
+    public int maxCoinBagCount = 3;
     public HorizontalLayoutGroup coinUIContainer;
     public HorizontalLayoutGroup bombUIContainer;
     public GameObject coinUIPrefab;
@@ -31,7 +31,7 @@ public class CoinManager : MonoBehaviour
 
     public void Update()
     {
-        if(coinCount == maxCoinCount  && Input.GetKeyDown(KeyCode.Space))
+        if(bombCarrier  && Input.GetKeyDown(KeyCode.Space))
         {
             SpawnBomb();
             Destroy(bomb);
@@ -41,34 +41,55 @@ public class CoinManager : MonoBehaviour
     }
     public void UpdateCoinCount(GameObject coin)
     {
-        if(coinCount < maxCoinCount)
+        if(coinBagCount < maxCoinBagCount)
         {
 
-            ++coinCount;
+            ++coinBagCount;
             GameObject temp = GameObject.Instantiate(coinUIPrefab);
             temp.transform.SetParent(coinUIContainer.transform);
             Destroy(coin.gameObject);
-            if (coinCount == maxCoinCount)
+            if (coinBagCount == maxCoinBagCount && !bombCarrier)
             {
+                bombCarrier = true;
                 bomb = GameObject.Instantiate(bombUIPrefab);
                 bomb.transform.SetParent(bombUIContainer.transform);
+                ResetCoinBagCount();
             }
+            else if(coinBagCount == maxCoinBagCount && bombCarrier)
+            {
+                ResetCoinBagCount();
+            }
+            
         }
+
        
+    }
+    public void ResetCoinBagCount()
+    {
+        coinBagCount = 0;
+        StartCoroutine(timer());
         
+    }
+    IEnumerator timer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 2; i > -1; i--)
+        {
+
+            Destroy(coinUIContainer.transform.GetChild(i).gameObject);
+        }
     }
     private void SpawnBomb()
     {
         GameObject.Instantiate(bombPrefab,player.transform.position,Quaternion.identity);
-        coinCount = 0;
+    /*    coinBagCount = 0;
         int childcount = coinUIContainer.transform.childCount;
         for  (int i = childcount - 1; i>-1; --i)
         {
             GameObject temp = coinUIContainer.transform.GetChild(i).gameObject;
 
             Destroy(temp);
-        }
+        }*/
     }
-
-    
+ 
 }
