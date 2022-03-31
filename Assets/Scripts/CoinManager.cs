@@ -27,6 +27,7 @@ public class CoinManager : MonoBehaviour
             instance = this;
         }
         player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     public void Update()
@@ -81,6 +82,7 @@ public class CoinManager : MonoBehaviour
     }
     private void SpawnBomb()
     {
+        
         GameObject.Instantiate(bombPrefab,player.transform.position,Quaternion.identity);
     /*    coinBagCount = 0;
         int childcount = coinUIContainer.transform.childCount;
