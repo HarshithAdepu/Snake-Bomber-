@@ -57,5 +57,11 @@ public class Bomb : MonoBehaviour
 
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;   
+        Gizmos.DrawSphere(transform.position, explosionRange);
+    }
+
 
 }
