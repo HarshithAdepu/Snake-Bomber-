@@ -17,18 +17,27 @@ public class PlayerMovement : MonoBehaviour
         ready,
         playing
     }
+
+    private void Awake()
+    {
+       // pView.Owner.NickName = "";
+    }
     void Start()
     {
+
+        
         // direction = Vector3.zero;
         playerstate = PlayerState.ready;
         pView = GetComponent<PhotonView>();
-        anim_Astro_Boi = GetComponent<Animator>();  
-        _Instance = this;   
+        anim_Astro_Boi = GetComponent<Animator>();
+        _Instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+//        Debug.Log(pView.Owner.NickName);
 
         switch (playerstate)
         {
@@ -43,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
         PlayerGoesOutOfBounds();
+
+       
 
     }
     public void PlayerGoesOutOfBounds()
@@ -105,7 +116,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position += direction * speed * Time.fixedDeltaTime;
-
         //transform.position = new Vector3(Mathf.Ceil(position.x), Mathf.Ceil(position.y), 0);
 
     }
