@@ -11,6 +11,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         int spawnPoints = Random.Range(0, playerSpawnPoints.Count);
         PhotonNetwork.Instantiate(playerPrefab.name,playerSpawnPoints[spawnPoints].position, Quaternion.identity);
+
     }
 
     // Update is called once per frame
